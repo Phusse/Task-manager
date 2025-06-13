@@ -1,3 +1,4 @@
+require('./db/connect');
 const express = require('express')
 const app = express();
 const tasks = require('./routes/task')
@@ -5,7 +6,7 @@ const tasks = require('./routes/task')
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.get('/hello', (req, res) => {
-  res.send('Task manager App'); 
+  res.send('Task manager App');
 });
 
 app.use('/api/v1/tasks', tasks);
